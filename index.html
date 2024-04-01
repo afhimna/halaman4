@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFHIMNA</title>
+    <style>
+        body {
+            font-family: "KFGQPC Uthman Taha Naskh Regular", "Times New Roman", Arial, sans-serif;
+            background: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #333;
+            padding: 20px 0;
+            font-size: 1.5em;
+        }
+
+        h3 {
+            font-family: "KFGQPC Uthman Taha Naskh Regular", "Times New Roman", Arial, sans-serif;
+            color: #ffffff;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        form input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        div {
+            background-color: #444;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #008000; 
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #006400; 
+        }
+
+        .answer-explanation {
+            text-align: left;
+            background-color: #ffd700; 
+            color: #000000; 
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .result-correct {
+            background-color: #008000; 
+        }
+
+        .result-incorrect {
+            background-color: #cc0000; 
+            animation: blink 1s infinite; 
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>بِسْمِ اللهِ الرَّحْمنِ الرَّحِيْمِ</h1>
+
+    <div>
+        <p>السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</p>
+        <p>selamat datang di “AFHIMNA”</p>
+		<p>Jawab pertanyaan dibawah ini dengan benar!</p>
+    </div>
+
+<!-- Pertanyaan dan jawaban -->
+    <h3>Pertanyaan 1:"عَلَى النَّبِيِّ خَيْرِ مَنْ قَدْ وَحَّدَا" Apakah lafadz "النَّبِيّ" Bisakah dinamakan اسم مَنْقُوْص?</h3>
+    <form name="question1">
+        <input type="radio" name="answer1" value="A"> A. Bisa secara mutlak<br>
+        <input type="radio" name="answer1" value="B"> B. Tidak bisa<br>
+        <input type="radio" name="answer1" value="C"> C. Bisa dengan syarat<br>
+        <input type="radio" name="answer1" value="D"> D. Kadang bisa<br>
+    </form>
+    <div id="result1" style="display: none; text-align: center;"></div>
+
+    <h3>Pertanyaan 2: Lafadz "وَحَّدَ" Termasuk bina' apa?</h3>
+    <form name="question2">
+        <input type="radio" name="answer2" value="A"> A. Mitsal wawi<br>
+        <input type="radio" name="answer2" value="B"> B. Mahmuz wawi<br>
+        <input type="radio" name="answer2" value="C"> C. Ajwaf Lam<br>
+        <input type="radio" name="answer2" value="D"> D. Shoheh<br>
+    </form>
+    <div id="result2" style="display: none; text-align: center;"></div>
+<h3>Pertanyaan 3: Salah satu faedah dari "قَدْ" Yang masuk pada fi'il madli? </h3>
+    <form name="question3">
+        <input type="radio" name="answer3" value="A"> A. Tartil<br>
+        <input type="radio" name="answer3" value="B"> B. Tanqis<br>
+        <input type="radio" name="answer3" value="C"> C. Tahqiq<br>
+        <input type="radio" name="answer3" value="D"> D. Takhfif<br>
+    </form>
+    <div id="result3" style="display: none; text-align: center;"></div>
+
+    <h3>Pertanyaan 4: Salah satu ma'na dari wazan فَعَّلَ adalah?</h3>
+    <form name="question4">
+        <input type="radio" name="answer4" value="A"> A. دُخُوْل فِيْ شَيْء<br>
+        <input type="radio" name="answer4" value="B"> B. مُشَارَكَة<br>
+        <input type="radio" name="answer4" value="C"> C. طَلَب<br>
+        <input type="radio" name="answer4" value="D"> D. نِسْبَةُ الْمَفْعُوْلِ إِلَى أَصْلِ الْفِعْلِbr>
+    </form>
+    <div id="result4" style="display: none;"></div>
+<h3>Pertanyaan 5: "وَآلِهِ وَصَحْبِهِ وَمَنْ تَبِع" Fi'il تَبِعَ يَتْبَعُ masuk pada bab?</h3>
+    <form name="question5">
+        <input type="radio" name="answer5" value="A"> A. 8<br>
+        <input type="radio" name="answer5" value="B"> B. 2<br>
+        <input type="radio" name="answer5" value="C"> C. 5<br>
+        <input type="radio" name="answer5" value="D"> D. 4<br>
+    </form>
+    <div id="result5" style="display: none;"></div>
+
+    <h3>Pertanyaan 6: Lafadz "مَنْ" Termasuk kategori apa.?</h3>
+    <form name="question6">
+        <input type="radio" name="answer6" value="A"> A. Isim Alat<br>
+        <input type="radio" name="answer6" value="B"> B. Isim manqus<br>
+        <input type="radio" name="answer6" value="C"> C. Isim Mudhore'<br>
+        <input type="radio" name="answer6" value="D"> D. Isim maushul<br>
+    </form>
+    <div id="result6" style="display: none;"></div>
+<h3>Pertanyaan 7: Siapa yang menjadi عَائِد dari isim maushul "مَنْ"?</h3>
+    <form name="question7">
+        <input type="radio" name="answer7" value="A"> A. Dlomir yang menjadi fa'il lafadz تَبِعَ<br>
+        <input type="radio" name="answer7" value="B"> B. Gabungan dari fi'il dan fa'il<br>
+        <input type="radio" name="answer7" value="C"> C. fi'il (تَبِعَ)<br>
+        <input type="radio" name="answer7" value="D"> D. tidak memiliki a'id<br>
+    </form>
+    <div id="result7" style="display: none;"></div>
+
+    <h3>Pertanyaan 8: " سَبِيْلَ دِيْنِ الْحَقِّ غَيْرَ مُبْتَدِعْ" Apa alasan "ma'rifatnya" Lafadz "سَبِيْل"? </h3>
+    <form name="question8">
+        <input type="radio" name="answer8" value="A"> A. isim dlomir<br>
+        <input type="radio" name="answer8" value="B"> B. isim alam<br>
+        <input type="radio" name="answer8" value="C"> C. Idlofah kepada isim yang statusnya ma'rifat<br>
+        <input type="radio" name="answer8" value="D"> D. idlofah kepada isim dlomir<br>
+    </form>
+    <div id="result8" style="display: none;"></div>
+<h3>Pertanyaan 9: Dibawah ini mana yang lebih "Ma'rifat"?</h3>
+    <form name="question9">
+        <input type="radio" name="answer9" value="A"> A. زَيْد<br>
+        <input type="radio" name="answer9" value="B"> B. أَنْتَ<br>
+        <input type="radio" name="answer9" value="C"> C. هذَا<br>
+        <input type="radio" name="answer9" value="D"> D. تِلْكَ<br>
+    </form>
+    <div id="result9" style="display: none;"></div>
+
+    <h3>Pertanyaan 10: Apa " Bahr" Dari nadlom "عَقِيْدَةُ الْعَوَامّ"?</h3>
+    <form name="question10">
+        <input type="radio" name="answer10" value="A"> A. wafir<br>
+        <input type="radio" name="answer10" value="B"> B. majzu' kamil<br>
+        <input type="radio" name="answer10" value="C"> C. Rojaz<br>
+        <input type="radio" name="answer10" value="D"> D. thowil muroffal<br>
+    </form>
+    <div id="result10" style="display: none;"></div>
+
+    <h3>Pertanyaan 11: "وَبَعْدُ فَاعْلَمْ بِوُجُوْبِ الْمَعْرِفَة", status dari lafadz "بَعْدُ" adalah?</h3>
+    <form name="question11">
+        <input type="radio" name="answer11" value="A"> A. mabni dlommah<br>
+        <input type="radio" name="answer11" value="B"> B. dibaca rofa'<br>
+        <input type="radio" name="answer11" value="C"> C. mabni fathah<br>
+        <input type="radio" name="answer11" value="D"> D. mabni sukun<br>
+    </form>
+    <div id="result11" style="display: none;"></div>
+
+<h3>Pertanyaan 12: shigot dari lafadz "وُجُوْب" adalah?</h3>
+    <form name="question12">
+        <input type="radio" name="answer12" value="A"> A. Dlomir mustamir<br>
+        <input type="radio" name="answer12" value="B"> B. isim mudlore'<br>
+        <input type="radio" name="answer12" value="C"> C. isim fa'il<br>
+        <input type="radio" name="answer12" value="D"> D. masdar<br>
+    </form>
+    <div id="result12" style="display: none;"></div>
+
+    <h3>Pertanyaan 13: "مِنْ وَاجِبٍ لِلهِ عِشْرِيْنَ صِفَة", i'rob dari lafadz "عِشْرِيْن" adalah?</h3>
+    <form name="question13">
+        <input type="radio" name="answer13" value="A"> A. rofa'<br>
+        <input type="radio" name="answer13" value="B"> B. jer<br>
+        <input type="radio" name="answer13" value="C"> C. nashob<br>
+        <input type="radio" name="answer13" value="D"> D. jazem<br>
+    </form>
+    <div id="result13" style="display: none;"></div>
+
+    <h3>Pertanyaan 14: lafadz "عِشْرِيْن" termasuk kategori apa?</h3>
+    <form name="question14">
+        <input type="radio" name="answer14" value="A"> A. jamak mudzakkar salim<br>
+        <input type="radio" name="answer14" value="B"> B. mulhaq isim tatsniyah<br>
+        <input type="radio" name="answer14" value="C"> C. mulhaq jamak mudzakkar<br>
+        <input type="radio" name="answer14" value="D"> D. isim mufrod<br>
+    </form>
+    <div id="result14" style="display: none;"></div>
+
+<h3>Pertanyaan 15: "يَجِبُ" asalnya adalah "يَوْجِبُ" kenapa wawu dibuang?</h3>
+    <form name="question15">
+        <input type="radio" name="answer15" value="A"> A. karena wawu di fi'il madli dibuang<br>
+        <input type="radio" name="answer15" value="B"> B. karena jatuh diantara fathah kasroh<br>
+        <input type="radio" name="answer15" value="C"> C. karena satu jenis dengan huruf setelahnya<br>
+        <input type="radio" name="answer15" value="D"> D. karena bertemunya dua huruf yang mati<br>
+    </form>
+    <div id="result15" style="display: none;"></div>
+
+    <h3>Pertanyaan 16: apa definisi "وَاجِب" menurut ilmu fiqh?</h3>
+    <form name="question16">
+        <input type="radio" name="answer16" value="A"> A. مَا يُثَابُ عَلَى فِعْلِهِ وَيُعَاقَبُ عَلَى تَرْكِهِ<br>
+        <input type="radio" name="answer16" value="B"> B. مَا يُعَاقَبُ عَلَى تَرْكِهِ وَلَا يُعَاقَبُ عَلَى فِعْلِهِ<br>
+        <input type="radio" name="answer16" value="C"> C. مَا يُثَابُ عَلَى فِعْلِهِ وَتَرْكِهِ<br>
+        <input type="radio" name="answer16" value="D"> D. مَا لَا يُثَابُ وَلَا يُعَاقَبُ عَلَى تَرْكِهِ وَفِعْلِهِ<br>
+    </form>
+    <div id="result16" style="display: none;"></div>
+
+    <h3>Pertanyaan 17: lafadz "صِفَة" diatas statusnya menjadi?</h3>
+    <form name="question17">
+        <input type="radio" name="answer17" value="A"> A. tamyiz<br>
+        <input type="radio" name="answer17" value="B"> B. hal<br>
+        <input type="radio" name="answer17" value="C"> C. maf'ul ma'ah<br>
+        <input type="radio" name="answer17" value="D"> D. istitsna'<br>
+    </form>
+    <div id="result17" style="display: none;"></div>
+
+    <h3>Pertanyaan 18: siapa yang meng'amili lafadz "صِفَة"?</h3>
+    <form name="question18">
+        <input type="radio" name="answer18" value="A"> A. عَامِل مَعْنَوِيّ<br>
+        <input type="radio" name="answer18" value="B"> B. مِنْ<br>
+        <input type="radio" name="answer18" value="C"> C. وَاجِب<br>
+        <input type="radio" name="answer18" value="D"> D. عِشْرِيْن<br>
+    </form>
+    <div id="result18" style="display: none;"></div>
+
+    <h3>Pertanyaan 19: "صِفَة" termasuk kategori tamyiz apa?</h3>
+    <form name="question19">
+        <input type="radio" name="answer19" value="A"> A. tamyiz nisbat<br>
+        <input type="radio" name="answer19" value="B"> B. tamyiz dzat<br>
+        <input type="radio" name="answer19" value="C"> C. tamyiz muntaqilah<br>
+        <input type="radio" name="answer19" value="D"> D. tamyiz musyta<br>
+    </form>
+    <div id="result19" style="display: none;"></div>
+
+    <h3>Pertanyaan 20: siapa yang menasobkan tamyiz nisbat?</h3>
+    <form name="question20">
+        <input type="radio" name="answer20" value="A"> A. amil ma'nawi<br>
+        <input type="radio" name="answer20" value="B"> B. fa'il dari nisbat<br>
+        <input type="radio" name="answer20" value="C"> C. fi'il atau syibh fi'il<br>
+        <input type="radio" name="answer20" value="D"> D. nisbatnya<br>
+    </form>
+    <div id="result20" style="display: none;"></div>
+
+    <h3>Pertanyaan 21: "فَاللّهُ مَوْجُوْدٌ قَدِيْمٌ بَاقِ", siapa yang merofa'kan lafadz قَدِيْم?</h3>
+    <form name="question21">
+        <input type="radio" name="answer21" value="A"> A. مَوْجُوْدٌ<br>
+        <input type="radio" name="answer21" value="B"> B. قَدِيْمٌ<br>
+        <input type="radio" name="answer21" value="C"> C. لَفْظُ الْجَلَالَة<br>
+        <input type="radio" name="answer21" value="D"> D. بَاق<br>
+    </form>
+    <div id="result21" style="display: none;"></div>
+
+    <h3>Pertanyaan 22: jamak taksir dari lafadz "قَدِيْم" adalah?</h3>
+    <form name="question22">
+        <input type="radio" name="answer22" value="A"> A. قَدَم<br>
+        <input type="radio" name="answer22" value="B"> B. قُدُوْم<br>
+        <input type="radio" name="answer22" value="C"> C. أَقْدَام<br>
+        <input type="radio" name="answer22" value="D"> D. قُدَمَاء<br>
+    </form>
+    <div id="result22" style="display: none;"></div>
+
+    <h3>Pertanyaan 23: "مُخَالِفٌ لِلْخَلْقِ بِالْإِطْلَاقِ", ta'alluq dari jar majrur (لِلْخَلْقِ) adalah?</h3>
+    <form name="question23">
+        <input type="radio" name="answer23" value="A"> A. مُخَالِفٌ<br>
+        <input type="radio" name="answer23" value="B"> B. بِالْإِطْلَاقِ<br>
+        <input type="radio" name="answer23" value="C"> C. dikira-kirakan<br>
+        <input type="radio" name="answer23" value="D"> D. tidak mempunyai ta'alluq<br>
+    </form>
+    <div id="result23" style="display: none;"></div>
+
+    <h3>Pertanyaan 24: shigot dari lafadz إِطْلَاق adalah?</h3>
+    <form name="question24">
+        <input type="radio" name="answer24" value="A"> A. isim alat<br>
+        <input type="radio" name="answer24" value="B"> B. masdar<br>
+        <input type="radio" name="answer24" value="C"> C. isim mudlore'<br>
+        <input type="radio" name="answer24" value="D"> D. dlomir mustamir<br>
+    </form>
+    <div id="result24" style="display: none;"></div>
+
+    <h3>Pertanyaan 25: salah satu makna dari wazan "فَاعَلَ" adalah?</h3>
+    <form name="question25">
+        <input type="radio" name="answer25" value="A"> A. طَلَب<br>
+        <input type="radio" name="answer25" value="B"> B. مُشَارَكَة<br>
+        <input type="radio" name="answer25" value="C"> C. دُخُوْل فِيْ شَيْء<br>
+        <input type="radio" name="answer25" value="D"> D. تَحْقِيْق<br>
+    </form>
+    <div id="result25" style="display: none;"></div>
+
+    <h3>Pertanyaan 26: خَالَفَ termasuk kategori fi'il yang?</h3>
+    <form name="question26">
+        <input type="radio" name="answer26" value="A"> A. مُخَيَّر<br>
+        <input type="radio" name="answer26" value="B"> B. لَا وَلَا<br>
+        <input type="radio" name="answer26" value="C"> C. مُتَصَرِّف<br>
+        <input type="radio" name="answer26" value="D"> D. جَامِد<br>
+    </form>
+    <div id="result26" style="display: none;"></div>
+
+    <h3>Pertanyaan 27: "وَقَائِمٌ غَنِيْ وَوَاحِدٌ وَحَي", jamak taksir dari lafadz "غَنِي" adalah?</h3>
+    <form name="question27">
+        <input type="radio" name="answer27" value="A"> A. أَغْنِيَاء<br>
+        <input type="radio" name="answer27" value="B"> B. غُنْيَة<br>
+        <input type="radio" name="answer27" value="C"> C. أَغَانِي<br>
+        <input type="radio" name="answer27" value="D"> D. غَنَانِي<br>
+    </form>
+    <div  id="result27" style="display: none;"></div>
+
+    <h3>Pertanyaan 28: Mad apakah yang ada di lafadz قَائِم?</h3>
+    <form name="question28">
+        <input type="radio" name="answer28" value="A"> A. mad wajib muttashil<br>
+        <input type="radio" name="answer28" value="B"> B. mad jaiz munfashil<br>
+        <input type="radio" name="answer28" value="C"> C. mad aridl<br>
+        <input type="radio" name="answer28" value="D"> D. mad thobi'i<br>
+    </form>
+    <div id="result28" style="display: none;"></div>
+
+    <h3>Pertanyaan 29: "قَادِرْ مُرِيْدٌ عَالِمٌ بِكُلِّ شَيْ",kenapa ro' yang ada pada lafadz قَادِرْ  disukun?</h3>
+    <form name="question29">
+        <input type="radio" name="answer29" value="A"> A. kemasukan amil jazem<br>
+        <input type="radio" name="answer29" value="B"> B. shoheh akhir<br>
+        <input type="radio" name="answer29" value="C"> C. imalah<br>
+        <input type="radio" name="answer29" value="D"> D. dlorurot syi'ir<br>
+    </form>
+    <div id="result29" style="display: none;"></div>
+
+    <h3>Pertanyaan 30: berapa hasil hisab jumali dari lafadz عَالِم?</h3>
+    <form name="question30">
+        <input type="radio" name="answer30" value="A"> A. 245<br>
+        <input type="radio" name="answer30" value="B"> B. 141<br>
+        <input type="radio" name="answer30" value="C"> C. 56<br>
+        <input type="radio" name="answer30" value="D"> D. 701<br>
+    </form>
+    <div id="result30" style="display: none;"></div>
+    <script>
+        function updateResults(questionNumber, correctAnswer, additionalInfo) {
+            var selectedAnswer = document.forms["question" + questionNumber].elements["answer" + questionNumber];
+            var resultDiv = document.getElementById("result" + questionNumber);
+
+            resultDiv.innerHTML = selectedAnswer.value === correctAnswer
+                ? "<p class='result-correct'><strong>Jawaban:</strong> Benar!</p>" + "<div class='answer-explanation'>" + additionalInfo + "</div>"
+                : "<p class='result-incorrect'><strong>Jawaban:</strong> Salah.</p>";
+
+            resultDiv.style.display = "block";
+        }
+
+document.forms["question1"].addEventListener("change", function () {
+            updateResults(1, "B", "<p>isim manqus adalah isim yang di akhiri ya' sukun, sedangkan lafadz النَّبِيّ tidak diakhiri ya' sukun. </p>");
+        });
+
+        document.forms["question2"].addEventListener("change", function () {
+            updateResults(2, "A", "<p>Mitsal wawi karena fa' fi'ilnya wawu (و ح د).</p>");
+        });
+
+        document.forms["question3"].addEventListener("change", function () {
+            updateResults(3, "C", "<p>تَحْقِيْق menunjukkan makna bahwa pekerjaan benar-benar terjadi, contoh: قَدْ قَامَ زَيْدٌ.</p>");
+        });
+
+        document.forms["question4"].addEventListener("change", function () {
+            updateResults(4, "D", "<p>نِسْبَةُ الْمَفْعُوْلِ إِلَى أَصْلِ الْفِعْلِ (menghubungkan/menggolongkan maf'ul pada fi'il yang asli, contoh: فَسَّقَ زَيْدٌ رَجُلًا (zaid menggolongkan rojul sebagai orang yang fasiq).</p>");
+        });
+
+        document.forms["question5"].addEventListener("change", function () {
+            updateResults(5, "D", "<p>Karena 'ain fi'il madli berharokat kasroh dan 'ain fi'il mudlore' berharokat fathah.</p>");
+        });
+document.forms["question6"].addEventListener("change", function () {
+            updateResults(6, "D", "<p>Isim maushul adalah isim yang membutuhkan shilah dan 'aid.</p>");
+        });
+
+        document.forms["question7"].addEventListener("change", function () {
+            updateResults(7, "A", "<p>A'id adalah dlomir yang kembali pada isim maushul.</p>");
+        });
+
+        document.forms["question8"].addEventListener("change", function () {
+            updateResults(8, "C", "<p>Idlofah kepada lafadz yang ma'rifat juga bisa menjadikan mudlof menjadi ma'rifat, غلام زيد hukumnya ma'rifat.</p>");
+        });
+
+        document.forms["question9"].addEventListener("change", function () {
+            updateResults(9, "B", "<p>Dlomir adalah isim ma'rifat yang paling ma'rifat disusul isim 'alam, isyaroh, maushul, dan isim yang mengandung ال.</p>");
+        });
+
+        document.forms["question10"].addEventListener("change", function () {
+            updateResults(10, "C", "<p>Bahr Rojaz adalah Bahr yang sering digunakan untuk menadlomkan sebuah kitab. Wazannya adalah مستفعلن مستفعلن مستفعلن * مستفعلن مستفعلن مستفعلن.</p>");
+        });
+
+         document.forms["question11"].addEventListener("change", function () {
+            updateResults(11, "A", "<p>karena mudlof ilah di buang dan masih diniati maknanya,        قَالَ فِي الْأَلْفِيَّة: قَبْلُ كَغَيْرُ بَعْدُ حَسْبُ أَوَّلُ * وَدُوْنُ وَالْجِهَّاتُ أَيْضًا وَعَلُ.</p>");
+        });
+
+        document.forms["question12"].addEventListener("change", function () {
+            updateResults(12, "D", "<p>وَجَبَ يَجِبُ وُجُوْبًا وَمَوْجِبًا فَهُوَ وَاجِبٌ وَذاكَ مَوْجُوْبٌ جِبْ لَا تَجِبْ مَوْجِبٌ ٢ مِيْجَابٌ .</p>");
+        });
+
+        document.forms["question13"].addEventListener("change", function () {
+            updateResults(13, "C", "<p>karena lafadz tersebut menjadi maf'ul dari lafadz الْمَعْرِفَة.</p>");
+        });
+
+         document.forms["question14"].addEventListener("change", function () {
+            updateResults(14, "C", "<p>mulhaq jamak mudzakkar salim adalah lafadz yang i'robnya sama dengan jamak mudzakkar salim namun tidak memenuhi syarat jamak mudzakkar.</p>");
+        });
+
+        document.forms["question15"].addEventListener("change", function () {
+            updateResults(15, "B", "<p>wawu adalah huruf yang serasi dengan dlommah, sedangkan fathah kasroh tentu beda dengan dlommah, dalam disiplin ilmu i'lal hal ini terkadang diredaksikan dengan bahasa لِوُقُوْعِهَا بَيْنَ عَدَاوَتَيْهَا (wawu terletak diantara dua musuhnya).</p>");
+        });
+
+        document.forms["question16"].addEventListener("change", function () {
+            updateResults(16, "A", "<p>Wajib adalah sesuatu yang diberi pahala jika dilaksanakan dan mendapat siksa jika ditinggalkan.</p>");
+        });
+
+         document.forms["question17"].addEventListener("change", function () {
+            updateResults(17, "A", "<p>lafadz صِفَة menjelaskan ketidakjelasan dari bilangan (عِشْرِيْن), menurut ilmu nahwu hal ini disebut tamyiz dzat.</p>");
+        });
+
+         document.forms["question18"].addEventListener("change", function () {
+            updateResults(18, "D", "<p>amil yang menashobkan tamyiz dzat adala dzat itu sendiri,contoh: اشْتَرَيْتُ عِشْرِيْنَ نَعْجَةً, lafadz نَعْجَةً dinashobkan oleh عِشْرِيْن.</p>");
+        });
+
+         document.forms["question19"].addEventListener("change", function () {
+            updateResults(19, "B", "<p>karena menjelaskan sebuah dzat yaitu lafadz عِشْرِيْنَ.</p>");
+        });
+
+         document.forms["question20"].addEventListener("change", function () {
+            updateResults(20, "C", "<p>berbeda dengan tamyiz dzat,tamyiz nisbat dinasobkan oleh musnad dari nisbat itu sendiri,contoh: تَصَبَّبَ زَيْدٌ عَرَقًا lafadz عَرَقًا dinasobkan oleh musnad dari زَيْدٌ yaitu fi'il تَصَبَّبَ.</p>");
+        });
+
+         document.forms["question21"].addEventListener("change", function () {
+            updateResults(21, "C", "<p>khobar yang kedua atau ketiga juga dirofa'kan oleh mubtada'.</p>");
+        });
+
+         document.forms["question22"].addEventListener("change", function () {
+            updateResults(22, "D", "<p>wazan فَعِيْل (yang bukan mu'tal lam dan mudlo'af) biasanya dijamakkan menggunakan wazan فُعَلَاء. contoh كَرِيْم كُرَمَاء شَرِيْف شُرَفَاء عَظِيْم عُظَمَاء</p>");
+        });
+
+         document.forms["question23"].addEventListener("change", function () {
+            updateResults(23, "A", "<p>ta'alluq/muta'allaq adalah fi'il atau sifat yang berhubungan dengan huruf jar</p>");
+        });
+
+         document.forms["question24"].addEventListener("change", function () {
+            updateResults(24, "B", "<p>أَطْلَقَ يُطْلِقُ إِطْلَاقًا وَمُطْلَقًا فَهُوَ مُطْلِقٌ وَذَاكَ مُطْلَقٌ أَطْلِقْ لَا تُطْلِقْ مُطْلَقٌ </p>");
+        });
+
+         document.forms["question25"].addEventListener("change", function () {
+            updateResults(25, "B", "<p>مُشَارَكَة menandakan bahwa fa'il dan maf'ul bih sama sama melakukan pekerjaan contoh: عَاوَنَ زَيْدٌ عَمْرًا, dalam contoh ini zaid dan amr sama sama menolong</p>");
+        });
+
+         document.forms["question26"].addEventListener("change", function () {
+            updateResults(26, "C", "<p>mutashorrif adalah fi'il yang bisa berubah (ditashrif)</p>");
+        });
+
+         document.forms["question27"].addEventListener("change", function () {
+            updateResults(27, "A", "<p>wazan فَعِيْل (yang mu'tal lam dan mudlo'af) dijamakkan dengan wazan أَفْعِلَاءُ, contoh: وَلِي أَوْلِيَاء شَدِيْد أَشِدَّاء</p>");
+        });
+
+         document.forms["question28"].addEventListener("change", function () {
+            updateResults(28, "A", "<p>mad wajib muttashil ada ketika hamzah jatuh setelah huruf mad dalam satu kalimat</p>");
+        });
+
+         document.forms["question29"].addEventListener("change", function () {
+            updateResults(29, "D", "<p>jika ro' diharokati dhommah dan dibaca قَادِرْ maka hal tersebut akan merusak juz/tafa'il dalam bait rojaz ini,dalam arudl قَادِرْمُرِيْ disimbolkan dengan 0//0/0/ مُسْتَفْعِلُنْ,dan jika ro' diharokati maka akan menjadi 0//0//0/ yang mana hal seperti ini tidak bisa digunakan untuk merangkai bahr rojaz (paham?)</p>");
+        });
+
+         document.forms["question30"].addEventListener("change", function () {
+            updateResults(30, "B", "<p>ain = 70, alif = 1, lam = 30, dan mim = 40, 70+1+30+40=141 (paham?).(ibarot dari sebagian jawaban bisa dicek disorotan IG atau channel telegram -klik logo IG atau Telegram dibawah-)</p>");
+        });
+    </script>
+
+<div>
+    <p>Kuis ini hanyalah kuis sederhana, setidaknya bisa membantu anda untuk kembali ke dimensi renung pribadi dan bisa kembali mengais memori Nahwu yang pernah hinggap di sanubari.</p>
+    <p>Temukan lebih banyak kuis yang bermanfaat untuk meningkatkan wawasan Nahwu Anda, info lebih lanjut hubungi.</p>
+    <a href="https://www.instagram.com/umarhamdan_a/"><img src="https://i.ibb.co/GJQLx7r/instagram-logo.png" alt="Instagram" style="width: 50px; height: 50px; opacity: 0.8;"></a>
+    <a href="https://wa.me/62859106771139"><img src="https://i.ibb.co/fH3g5XW/whatsapp-logo.png" alt="WhatsApp" style="width: 50px; height: 50px; opacity: 0.8;"></a>
+    <a href="https://t.me/AFHIMNA"><img src="https://i.ibb.co/2tMtmy1/telegram-logo.png" alt="Telegram" style="width: 50px; height: 50px;"></a>
+    <p>this website is created by foztoro© .</p>
+</div>
+</body>
+
+</html>
